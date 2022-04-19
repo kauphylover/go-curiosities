@@ -1,15 +1,15 @@
-package version
+package main
 
 import "runtime"
 
 var (
-	semver    string
-	gitCommit string
+	semanticVersion string
+	gitCommit       string
 )
 
 // BuildInfo describes compile time information.
 type BuildInfo struct {
-	// Version is the current semver.
+	// Version is the current semanticVersion.
 	Version string
 
 	// GitCommit is the git sha1.
@@ -21,7 +21,7 @@ type BuildInfo struct {
 
 func Get() BuildInfo {
 	return BuildInfo{
-		Version:   semver,
+		Version:   semanticVersion,
 		GitCommit: gitCommit,
 		GoVersion: runtime.Version(),
 	}
